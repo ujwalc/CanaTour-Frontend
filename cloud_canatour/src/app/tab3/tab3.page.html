@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+
+        <ion-item>
+            <ion-title>
+                Cana Tour
+
+            </ion-title>
+            <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-item>
+
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+
+    <ion-searchbar></ion-searchbar>
+
+    <ion-item>
+        <ion-label>Source</ion-label>
+        <ion-select value={gender} placeholder="Select One">
+            <ion-select-option>Halifax</ion-select-option>
+            <ion-select-option>Toronto</ion-select-option>
+            <ion-select-option>Montreal</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>Destination</ion-label>
+        <ion-select value={gender} placeholder="Select One">
+            <ion-select-option>Halifax</ion-select-option>
+            <ion-select-option>Toronto</ion-select-option>
+            <ion-select-option>Montreal</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>Cities</ion-label>
+        <ion-select value={gender} placeholder="Select One">
+            <ion-select-option>City 1</ion-select-option>
+            <ion-select-option>City 2</ion-select-option>
+            <ion-select-option>City 3</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>Departure Date</ion-label>
+        <ion-datetime value="2020-01-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+
+    </ion-item>
+
+    <ion-item>
+        <ion-label>No of Passengers</ion-label>
+        <ion-select value={gender} placeholder="Select One">
+            <ion-select-option>1</ion-select-option>
+            <ion-select-option>2</ion-select-option>
+            <ion-select-option>3</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-button>Search</ion-button>
+
+</ion-content>

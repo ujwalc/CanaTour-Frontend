@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="../tabs">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>
+                Booking
+            </ion-title>
+
+
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br>
+    <ion-input placeholder="Enter Name on Card"></ion-input>
+    <ion-input placeholder="Enter Card Number"></ion-input>
+    <ion-item>
+        <ion-input placeholder="Enter CVV"></ion-input>
+        <ion-label>Expire: </ion-label>
+        <ion-datetime value="2019-10T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-button (click)="onPay()">Pay
+        </ion-button>
+        <ion-button slot="end" routerLink="/">Cancel
+        </ion-button>
+    </ion-item>
+
+</ion-content>

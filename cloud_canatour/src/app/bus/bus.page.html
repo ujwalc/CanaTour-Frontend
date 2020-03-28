@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="../tabs">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>
+                Busses
+            </ion-title>
+
+
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let buss of busses">
+            <ion-label>Bus ID: {{buss.busid}}<br>
+                <ion-item>
+                    <ion-label>Time: {{buss.starttime}}</ion-label>
+
+                    <ion-label>Seats: {{buss.seatsavailable}}</ion-label>
+
+                </ion-item>
+            </ion-label>
+            <ion-button id={{buss.scheduleid}} (click)="onBook(buss.scheduleid)">
+                Book
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>

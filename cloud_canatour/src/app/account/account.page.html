@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="/">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>
+                Account
+            </ion-title>
+
+
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-segment>
+        <ion-segment-button value="login" (click)="onLogin()">
+            <ion-label>Login</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="signup" (click)="onSignup()">
+            <ion-label>Sign Up</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+    <div *ngIf="login">
+        <br>
+        <ion-input placeholder="Enter Username"></ion-input>
+        <ion-input placeholder="Enter Password"></ion-input>
+        <br>
+        <ion-item>
+            <ion-button slot="end">Login
+            </ion-button>
+
+        </ion-item>
+    </div>
+    <div *ngIf="signup">
+        <br>
+        <ion-input placeholder="Enter Name"></ion-input>
+        <ion-input placeholder="Enter Email"></ion-input>
+        <ion-input placeholder="Enter Password"></ion-input>
+        <ion-input placeholder="Confirm Password"></ion-input>
+
+        <ion-item>
+            <ion-label>Sex</ion-label>
+            <ion-select value={gender} placeholder="Select One">
+                <ion-select-option>Male</ion-select-option>
+                <ion-select-option>Female</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+
+
+        <br>
+        <ion-item>
+            <ion-button slot="end">Signup
+            </ion-button>
+
+        </ion-item>
+    </div>
+</ion-content>
