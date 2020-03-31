@@ -1,0 +1,8 @@
+{
+  "name": "CANATOUR",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

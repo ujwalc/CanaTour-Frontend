@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="/">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>
+                Account
+            </ion-title>
+
+
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="accountExist">
+        <ion-label>Logged in as {{loginMail}}</ion-label><br>
+        <ion-button (click)="onLogout()" slot="end">Logout
+        </ion-button><br><br>
+        <ion-label>Ticket Details:</ion-label>
+        <ion-item *ngFor="let buss of ticketDetails">
+            <ion-label>Bus ID: {{buss.busid}}<br> Destination: {{buss.destination_id}}<br> Start Time: {{buss.starttime}}<br> Journey Date: {{buss.journeydate}}<br> Passengers: {{buss.passengers}}<br> Price: {{buss.price}}<br> Schedule ID: {{buss.scheduleid}}</ion-label><br>
+
+        </ion-item>
+
+    </div>
+    <div *ngIf="!accountExist">
+        <ion-segment>
+            <ion-segment-button value="login" (click)="onLogin()">
+                <ion-label>Login</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="signup" (click)="onSignup()">
+                <ion-label>Sign Up</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+        <div *ngIf="login">
+
+            <br>
+            <ion-input [(ngModel)]="loginMail" placeholder="Enter Username" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+            <ion-input [(ngModel)]="loginPass" type="password" placeholder="Enter Password"></ion-input>
+            <br>
+            <ion-item>
+                <ion-button slot="end" (click)="clickLogin()">Login</ion-button>
+            </ion-item>
+        </div>
+        <div *ngIf="signup">
+            <br>
+            <ion-input [(ngModel)]="signupName" placeholder="Enter Name"></ion-input>
+            <ion-input [(ngModel)]="signupMail" placeholder="Enter Email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+            <ion-input [(ngModel)]="signupNum" placeholder="Enter Phone Number"></ion-input>
+            <ion-input [(ngModel)]="signupPass" type="password" placeholder="Enter Password"></ion-input>
+            <ion-input [(ngModel)]="confirmPass" type="password" placeholder="Confirm Password"></ion-input>
+
+            <ion-item>
+                <ion-label>Sex</ion-label>
+                <ion-select [(ngModel)]="gender" placeholder="Select One">
+                    <ion-select-option value="Male">Male</ion-select-option>
+                    <ion-select-option value="Female">Female</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+
+
+            <br>
+            <ion-item>
+                <ion-button (click)="clickSignup()" slot="end">Signup
+                </ion-button>
+
+            </ion-item>
+        </div>
+    </div>
+</ion-content>

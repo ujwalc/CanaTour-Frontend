@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+
+        <ion-item>
+            <ion-title>
+                Cana Tour
+            </ion-title>
+            <ion-button routerLink="/account">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </ion-button>
+
+        </ion-item>
+
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+    <ion-searchbar></ion-searchbar>
+    <br>
+
+    <ion-item>
+        <ion-label>Source</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="selectedSoc" [selectedText]="selectedSoc">
+            <ion-select-option *ngFor="let item of sources" value={{item.cityId}}>{{item.cityName}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Beaches</ion-label>
+        <ion-select value={fPark} placeholder="Select One" [(ngModel)]="selectedPark" [selectedText]="selectedPark">
+            <ion-select-option *ngFor="let item of destinations" value={{item.cityId}}>{{item.cityName}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>Departure Date</ion-label>
+        <ion-datetime value="2020-12-04T15:43:40.394Z" display-timezone="utc" [(ngModel)]="selectedDate"></ion-datetime>
+
+    </ion-item>
+
+    <ion-item>
+        <ion-label>No of Passengers</ion-label>
+        <ion-select [(ngModel)]="selectedpCount" [selectedText]="selectedpCount" placeholder="Select One">
+            <ion-select-option value=1>1</ion-select-option>
+            <ion-select-option value=2>2</ion-select-option>
+            <ion-select-option value=3>3</ion-select-option>
+            <ion-select-option value=4>4</ion-select-option>
+            <ion-select-option value=5>5</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-button (click)="onSearch()">Search</ion-button>
+        <ion-button slot="end" (click)="onClear()">Clear</ion-button>
+    </ion-item>
+
+
+
+
+
+</ion-content>
